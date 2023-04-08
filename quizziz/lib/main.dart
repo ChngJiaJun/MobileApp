@@ -74,25 +74,31 @@ class _QuizPageState extends State<QuizPage> {
               child: Text('True'),
               onPressed: () {
                 // if user clicked the true button and the answer is also true
-                if(quizbrain.getAnswer()) {
+                if (quizbrain.getAnswer()) {
                   isCorrect = true;
                 }
 
                 setState(() {
                   // if user answer is correct
-                  if(isCorrect) {
-                    scoreKeeper.add(Icon(Icons.check, color: Colors.green,));
+                  if (isCorrect) {
+                    scoreKeeper.add(Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ));
                   }
                   // if user answer is incorrect
                   else {
-                    scoreKeeper.add(Icon(Icons.close, color: Colors.red,));
+                    scoreKeeper.add(Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ));
                   }
 
                   // reset the isCorrect value
                   isCorrect = false;
 
                   // if we are at the last question, reset to the first
-                  if(counter == quizbrain.getTotalQuestion()-1){
+                  if (counter == quizbrain.getTotalQuestion() - 1) {
                     quizbrain.resetCounter();
                     scoreKeeper.clear();
                   }
@@ -120,30 +126,36 @@ class _QuizPageState extends State<QuizPage> {
                       (states) => BeveledRectangleBorder())),
               child: Text('False'),
               onPressed: () {
-                if(quizbrain.getAnswer() == false) {
+                if (quizbrain.getAnswer() == false) {
                   isCorrect = true;
                 }
                 setState(() {
                   // if user answer is correct
-                  if(isCorrect) {
-                    scoreKeeper.add(Icon(Icons.check, color: Colors.green,));
+                  if (isCorrect) {
+                    scoreKeeper.add(Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ));
                   }
                   // if user answer is incorrect
                   else {
-                    scoreKeeper.add(Icon(Icons.close, color: Colors.red,));
+                    scoreKeeper.add(Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ));
                   }
 
                   // reset the isCorrect value
                   isCorrect = false;
 
                   // if we are at the last question, reset to the first
-                  if(counter == quizbrain.getTotalQuestion()-1){
+                  if (counter == quizbrain.getTotalQuestion() - 1) {
                     quizbrain.resetCounter();
                     scoreKeeper.clear();
                   }
                   // else we are going to proceed to the next question
                   else {
-                   quizbrain.updateCounter();
+                    quizbrain.updateCounter();
                   }
                 });
               },
