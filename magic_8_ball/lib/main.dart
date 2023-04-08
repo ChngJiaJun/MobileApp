@@ -18,12 +18,12 @@ class BallPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 132, 146, 238),
       appBar: AppBar(
-        title: const Text(
-          'Ask Me Anything',
-          style: TextStyle(color: Colors.white),
+        title: const Center(
+          child: Text('Ask Me Anything'),
         ),
-        centerTitle: true,
+        backgroundColor: Color.fromARGB(255, 19, 2, 255),
       ),
       body: const Ball(),
     );
@@ -59,7 +59,10 @@ class _BallState extends State<Ball> {
       child: GestureDetector(
         onTap: () => randomize(),
         // display ball image
-        child: Image.asset('assets/images/ball${ballNumber + 1}.png'),
+        child: Padding(
+          padding: EdgeInsets.all(25.0),
+          child: Image.asset('assets/images/ball${ballNumber + 1}.png'),
+        ),
       ),
     );
   }
